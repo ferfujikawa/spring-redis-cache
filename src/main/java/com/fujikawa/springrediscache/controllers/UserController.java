@@ -3,6 +3,7 @@ package com.fujikawa.springrediscache.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fujikawa.springrediscache.dtos.UpdateUsernameDto;
 import com.fujikawa.springrediscache.models.User;
 import com.fujikawa.springrediscache.repositories.UserRepository;
 
@@ -33,7 +34,8 @@ public class UserController {
     @PutMapping("{id}")
     public Mono<User> updateUsername(
         @PathVariable("id") int id,
-        @RequestBody String name) {
-        return userRepository.updateUserName(id, name);
+        @RequestBody UpdateUsernameDto updateUsernameDto) {
+            
+        return userRepository.updateUserName(id, updateUsernameDto.getName());
     }
 }
