@@ -1,6 +1,15 @@
 services:
-  redis:
+  redis-cache:
     image: redis:7.2.4-alpine
     ports:
       - 6379:6379
     container_name: redis-cache
+  app:
+    image: spring-redis-cache
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    container_name: spring-redis-cache
+    depends_on:
+      - redis-cache
