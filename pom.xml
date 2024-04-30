@@ -15,6 +15,7 @@
 	<description>Demo application using distributed cache with Redis</description>
 	<properties>
 		<java.version>17</java.version>
+		<start-class>com.fujikawa.springrediscache.SpringRedisCacheApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
