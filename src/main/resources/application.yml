@@ -1,3 +1,9 @@
 spring:
+  main:
+    banner-mode: off
   application:
     name: spring-redis-cache
+  data:
+    redis:
+      host: ${REDIS_HOST:redis-cache}
+      port: ${REDIS_PORT:6379}
